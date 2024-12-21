@@ -2738,12 +2738,12 @@ select.mobile-device {
     background-color: rgb(75, 72, 72);
 }
 
-/* Hide the default cursor */
+/* Hide the default cursor on PC */
 body {
     cursor: none;
   }
   
-  /* Main cursor design (the "mouse" pointer) */
+  /* Main cursor design (mouse pointer or touch point) */
   .cursor {
     position: fixed;
     top: 0;
@@ -2755,10 +2755,10 @@ body {
     pointer-events: none;
     z-index: 1000;
     transform: translate(-50%, -50%);
-    transition: transform 0.1s ease-out; /* Smooth follow effect */
+    transition: transform 0.1s ease-out;
   }
   
-  /* Trail effect (fades out while following the cursor) */
+  /* Trail effect (fades out while following the cursor or touch point) */
   .cursor-trail {
     position: fixed;
     top: 0;
@@ -2771,7 +2771,12 @@ body {
     pointer-events: none;
     z-index: 999;
     transform: translate(-50%, -50%);
-    transition: transform 0.15s ease-out, opacity 0.3s ease-out; /* Smooth animation */
+    transition: transform 0.15s ease-out, opacity 0.3s ease-out;
+  }
+  
+  /* Show on touch devices */
+  body:active .cursor, body:active .cursor-trail {
+    display: block;
   }
   
 
