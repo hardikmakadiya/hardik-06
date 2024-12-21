@@ -590,29 +590,33 @@ setTimeout(() => {
 const cursor = document.querySelector('.cursor');
 const trail = document.querySelector('.cursor-trail');
 
-// Track the mouse position and animate the cursor
+// Function to update cursor position
+const updateCursor = (x, y) => {
+  cursor.style.transform = `translate(${x}px, ${y}px)`;
+  trail.style.transform = `translate(${x}px, ${y}px)`;
+};
+
+// Handle mouse movement
 document.addEventListener('mousemove', (e) => {
-  const { clientX, clientY } = e;
-
-  // Move the main cursor
-  cursor.style.transform = `translate(${clientX}px, ${clientY}px)`;
-
-  // Move the trailing cursor with a slight delay for a smooth animation
-  trail.style.transform = `translate(${clientX}px, ${clientY}px)`;
+  updateCursor(e.clientX, e.clientY);
 });
 
-// Optional hover effect
-document.querySelectorAll('h1, p').forEach((element) => {
-  element.addEventListener('mouseenter', () => {
-    cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
-    trail.style.opacity = 0.6;
-  });
-
-  element.addEventListener('mouseleave', () => {
-    cursor.style.transform = 'translate(-50%, -50%) scale(1)';
-    trail.style.opacity = 1;
-  });
+// Handle touch movement
+document.addEventListener('touchmove', (e) => {
+  const touch = e.touches[0];
+  updateCursor(touch.clientX, touch.clientY);
 });
 
+// Optional: Show cursor when the screen is touched
+document.addEventListener('touchstart', (e) => {
+  cursor.style.opacity = '1';
+  trail.style.opacity = '1';
+});
+
+// Optional: Hide cursor when touch ends
+document.addEventListener('touchend', (e) => {
+  cursor.style.opacity = '0';
+  trail.style.opacity = '0';
+});
 
 </script>
