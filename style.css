@@ -2283,7 +2283,33 @@ select.mobile-device {
     line-height: 1.8;
     margin: 0 10px 0 10px;
     text-decoration: none;
+    color: #ffffff; /* Default link color */
+    position: relative;
+    transition: color 0.3s ease;
 }
+
+.footer-distributed .footer-links a:hover {
+    color: #ff6b6b; /* Hover color */
+    text-decoration: none; /* Remove default underline */
+}
+
+/* Add an underline animation */
+.footer-distributed .footer-links a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #ff6b6b;
+    left: 50%;
+    bottom: -2px;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.footer-distributed .footer-links a:hover::after {
+    width: 100%; /* Full underline on hover */
+}
+
 
 .footer-distributed .footer-company-name {
     font-weight: 300;
