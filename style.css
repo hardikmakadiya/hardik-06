@@ -691,7 +691,7 @@ xclip
         opacity: 1; /* Fully visible */
     }
 }
-#name {
+#nametag {
             font-size: 3rem; /* Adjust font size */
             font-weight: bold;
             text-transform: uppercase;
@@ -709,7 +709,7 @@ xclip
             100% { background-position: 0% 50%; }
         }
 
-        #name::after {
+        #nametag::after {
             content: "";
             position: absolute;
             left: 0;
