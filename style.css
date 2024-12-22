@@ -307,36 +307,37 @@ a img.aligncenter {
 	
 }
 
-.navbar-dark .navbar-nav .nav-link{
-	color: #e8ea65;
-	letter-spacing: 1px;
-	font-size: 14px;
-	position: relative;
+.navbar-dark .navbar-nav .nav-link {
+    display: inline-block;
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin: 0 10px 0 10px;
+    text-decoration: none;
+    color: #25e8d1; /* Default link color */
+    position: relative;
+    transition: color 0.3s ease;
 }
-.navbar-dark .navbar-nav .nav-link:hover{
-	color: #50ee9c;
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #9cdf29; /* Hover color */
+    text-decoration: none; /* Remove default underline */
 }
-.navbar-dark .navbar-nav .nav-link.active{
-	font-weight: 600;
-}
+
+/* Add an underline animation */
 .navbar-dark .navbar-nav .nav-link::after {
-    content: '';
-    width: 0;
-    height: 3px;
-    background: #e8ea65;
+    content: "";
     position: absolute;
-    bottom: 0;
-    left: 0;
-	right: 0;
-	text-align: center;
-	margin: 0 auto;
-    border-radius: 0px;
-    -webkit-transition: all .5s;
-    transition: all .5s;
-    z-index: -1;
+    width: 0;
+    height: 2px;
+    background: #1e10e0;
+    left: 50%;
+    bottom: -2px;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
 }
-.navbar-dark .navbar-nav .nav-link.active::after {
-	width: 50%;
+
+.navbar-dark .navbar-nav .nav-link:hover::after {
+    width: 100%; /* Full underline on hover */
 }
 
 /*------------------------------------------------------------------
