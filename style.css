@@ -692,9 +692,8 @@ xclip
 }
 #name {
     text-shadow: 5px 5px 10px rgba(58, 54, 54, 0.5); /* Shadow effect */
-    font-size: 3rem; /* Optional: Adjust text size */
+    
     color: #fffbfb; /* Optional: Set text color */
-    font-weight: bold; /* Optional: Enhance appearance */
 }
 
 
